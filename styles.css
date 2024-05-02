@@ -1,0 +1,98 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 80px; /* Espace pour le bouton de lecture/pause */
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-around; /* Ajusté pour une meilleure répartition */
+    width: 100%;
+}
+
+.image-container {
+    width: 28%;
+    margin: 10px;
+    transition: transform 0.5s ease;
+	
+}
+
+.image-container.centered {
+    width: 30%;
+    margin: 10px auto;
+	margin-top: px
+}
+
+.image-container img {
+    width: 100%;
+    transition: opacity 0.5s ease;
+	
+}
+
+.play-pause-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Hauteur de la barre de navigation */
+     background-color: rgba(10, 19, 30, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500; /* Assez élevé pour rester au-dessus du reste du contenu */
+}
+
+.button-img {
+    cursor: pointer;
+    width: 130px; /* Taille ajustée pour l'image */
+    height: 130px; /* Taille ajustée pour l'image */
+    transition: opacity 0.3s;
+    animation: pulseAnimation 4s infinite;
+    border-radius: 50%; /* Garde l'image circulaire */
+    /* box-shadow supprimé */
+	margin-top: 55px
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1); /* Aucun box-shadow, juste transformation */
+    }
+    50% {
+        transform: scale(1.05); /* Agrandit légèrement l'image */
+    }
+    100% {
+        transform: scale(1); /* Retour à la taille normale */
+    }
+}
+
+/* Nouveau style pour les blocs d'images à pleine largeur */
+.image-block {
+    width: 100%; /* Largeur maximale de la zone parente */
+    max-width: 100%; /* Assurez-vous que la largeur n'excède pas la largeur de la zone parente */
+    margin: 10px;
+    max-height: 300px; /* Définir la hauteur maximale souhaitée */
+    overflow: hidden;
+	margin-left: 800px;
+	margin-top: 40px
+}
+.banner3 {
+       width: 100%; /* Largeur maximale de la zone parente */
+    max-width: 100%; /* Assurez-vous que la largeur n'excède pas la largeur de la zone parente */
+    margin: 10px;
+    max-height: 300px; /* Définir la hauteur maximale souhaitée */
+    overflow: hidden;
+	margin-left: 4px;
+	margin-top: 40px /* Ajoutez vos styles spécifiques ici */
+}

@@ -1,0 +1,41 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#logo {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 10px auto;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.image-container {
+    width: 30%;
+    margin: 10px;
+    transition: transform 0.5s ease;
+}
+
+.image-container img {
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.image-container:hover img {
+    opacity: 0.5; /* Diminue l'opacité au survol */
+}

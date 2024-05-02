@@ -1,0 +1,66 @@
+/* Styles de base pour le corps de la page et la hauteur complète avec image de fond */
+body, html {
+    height: 100%; /* Assure que le fond couvre toute la hauteur de la page */
+    margin: 0;
+    padding: 0;
+    background-image: url('bg.png'); /* Remplacez par le chemin de votre image */
+    background-position: center; /* Centre l'image de fond */
+    background-repeat: no-repeat; /* Empêche l'image de se répéter */
+    background-size: cover; /* Assure que l'image couvre entièrement l'écran */
+}
+
+/* Styles pour le logo */
+#logo {
+    display: block;
+    width: 100px;
+    height: 50px;
+    margin: 10px auto;
+    background-image: url('logo.png'); /* Assurez-vous que le chemin est correct */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Conteneur principal pour le contenu aligné verticalement */
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Ligne contenant les images */
+.image-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Ajoutez de l'espace entre les lignes */
+}
+
+/* Conteneur pour chaque image ajustant la flexibilité */
+.image-container {
+    flex: 1 1 50%; /* Chaque conteneur d'image prend la moitié de la largeur */
+    margin: 5px; /* Petite marge pour la séparation */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur */
+}
+
+/* Styles spécifiques pour le conteneur d'image centré */
+.centered {
+    flex: 0 1 100%; /* La troisième image prend toute la largeur, centrée */
+    display: flex;
+    justify-content: center;
+}
+
+.centered .image-container {
+    flex: 0 1 auto; /* Permet à cette image de ne pas s'étirer */
+}
+
+/* Style pour les images à l'intérieur des conteneurs pour assurer un affichage complet */
+.image-container img {
+    width: 100%;
+    display: block; /* Évite les problèmes de marges intérieures */
+}
+
+/* Effet de survol pour les images */
+.image-container:hover img {
+    opacity: 0.5; /* Diminue l'opacité au survol pour un effet visuel */
+}

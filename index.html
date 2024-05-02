@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Amadeus</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <!-- Section audio -->
+    <audio id="myAudio" autoplay loop>
+        <source src="hxh.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <!-- Bouton Play/Pause fixé en haut -->
+    <div class="play-pause-container">
+        <img src="logo.png" alt="Play/Pause" onclick="togglePlayPause()" class="button-img">
+    </div>
+
+    <!-- Votre contenu ici -->
+    <div id="content">
+        <div class="image-row">
+            <div class="image-container">
+                <img src="heiwa.png" alt="Image 1" class="image" data-hover="maestro.png">
+            </div>
+            <div class="image-container">
+                <img src="baorin.png" alt="Image 2" class="image" data-hover="baorin1.png">
+            </div>
+        </div>
+        <div class="image-block">
+            <img src="banner.png" alt="Image 1">
+        </div>
+        <div class="image-row">
+            <div class="image-container centered">
+                <img src="amadeus.png" alt="Image 3" class="image" data-hover="amadeus2.png">
+            </div>
+        </div>
+        <div class="image-block">
+            <img src="banner1.png" alt="Image 2">
+        </div>
+        <div class="image-row">
+            <div class="image-container">
+                <img src="austin.png" alt="Image 4" class="image" data-hover="toci.png">
+            </div>
+            <div class="image-container">
+                <img src="perla.png" alt="Image 5" class="image" data-hover="ivan.png">
+            </div>
+        </div>
+        <div class="image-block">
+            <img src="banner2.png" alt="Image 3">
+        </div>
+        <div class=".banner3">
+    <div class="image-block banner3">
+        <img src="banner3.png" alt="Image 4">
+    </div>
+</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.image');
+            images.forEach(image => {
+                const originalSrc = image.src;
+                const hoverSrc = image.getAttribute('data-hover');
+                image.addEventListener('mouseenter', () => {
+                    image.src = hoverSrc;
+                });
+                image.addEventListener('mouseleave', () => {
+                    image.src = originalSrc;
+                });
+            });
+
+            var myAudio = document.getElementById("myAudio");
+            var isPlaying = true;
+
+            window.togglePlayPause = function() {
+                if (isPlaying) {
+                    myAudio.pause();
+                } else {
+                    myAudio.play();
+                }
+                isPlaying = !isPlaying; // Toggle the state
+            }
+        });
+    </script>
+</body>
+</html>
